@@ -1,0 +1,4 @@
+# hiding io-run test files
+*.inp
+*.oac
+*.out
