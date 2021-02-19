@@ -1,0 +1,13 @@
+Class 1 Intro to Python:  https://docs.google.com/presentation/d/1mra0tHUJp5U7GMsbulhkylRCicxJA8DmfGJVvDucy2k/edit?usp=sharing
+Conditionals and loops: https://docs.google.com/presentation/d/1ZfnTddp6ijpkoAkbctqkKnuKq1uBzoaUwAYcmykN0k8/edit?usp=sharing
+Intro to list:  https://docs.google.com/presentation/d/1aIGGztse-J9LOQm_F9SV6FT_8Ptos8air1IR597bvfU/edit?usp=sharing
+Intro to loops and list:  https://docs.google.com/presentation/d/1aIGGztse-J9LOQm_F9SV6FT_8Ptos8air1IR597bvfU/edit?usp=sharing
+File input and output in python:   https://docs.google.com/presentation/d/1dpJ-PG34XU3CjxP7uk_FGTKB-SnTbiYLcTFLokYIBBQ/edit?usp=sharing
+Introduction to String:  https://docs.google.com/presentation/d/1Dy-wLlFi4lKwLoMxvgSJRludyNMRRVPWTmUryekPrKY/edit?usp=sharing
+Dictionary, Set, and Tuples in Python:   https://docs.google.com/presentation/d/1LYILpmkXvtBrxEF4b_9KOntO_ryVzoc0fgpn3rL9O-A/edit?usp=sharing
+Time complexity:  https://docs.google.com/presentation/d/1EFJYN87cm-MgEX6J-0E0QV0xnlzQ4gh04KgpTVPL8XA/edit?usp=sharing
+Introduction to Function:  https://docs.google.com/presentation/d/1EFJYN87cm-MgEX6J-0E0QV0xnlzQ4gh04KgpTVPL8XA/edit?usp=sharing
+Introduction to Function and Recursion:  https://docs.google.com/presentation/d/1wF8wG5NQdNdPC_BtVfeKetwGgSEexlXh8arFMhyD-GY/edit?usp=sharing
+problem solving 1:  https://docs.google.com/presentation/d/1Mly5kQOuIv0Ud-LHeMzndBf1bh8nr98dAywUvqW3cxI/edit?usp=sharing
+Problem solving 2:  https://docs.google.com/presentation/d/1wF8wG5NQdNdPC_BtVfeKetwGgSEexlXh8arFMhyD-GY/edit?usp=sharing
+problem solving 3:  https://docs.google.com/presentation/d/1-if8kzkw2pLCptrR93drxEgllTlZ9Rbc6THzFcjPTwU/edit?usp=sharing
