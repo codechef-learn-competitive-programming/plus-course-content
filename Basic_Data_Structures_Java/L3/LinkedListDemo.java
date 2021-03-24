@@ -282,5 +282,43 @@ public class LinkedListDemo {
 		
 		return false;
 	}
+	class NewNode {
+		int data;
+		NewNode right;
+		NewNode down;
+	}
+	public NewNode flatten(NewNode head) {
+		
+		if(head == null || head.right == null) {
+			return head;
+		}
+		//recursive call
+		head.right = flatten(head.right);
+		
+		//self work
+		
+		head = merge(head, head.right);
+		
+		return head;
+	}
+
+	private NewNode merge(NewNode a, NewNode b) {
+		
+		if(a == null) return b;
+		if(b == null) return a;
+		
+		
+		NewNode res;
+		
+		if(a.data < b.data) {
+			res = a;
+			res.down = merge(a.down, b);
+		}else {
+			res = b;
+			res.down = merge(a, b.down);
+		}
+		
+		return res;
+	}
 
 }
