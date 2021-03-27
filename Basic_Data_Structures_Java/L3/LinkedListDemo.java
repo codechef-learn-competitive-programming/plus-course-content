@@ -22,7 +22,6 @@ public class LinkedListDemo {
 
 		System.out.println("-----------------------------");
 		Node temp = this.head;
-
 		while (temp != null) {
 			System.out.print(temp.data + " ");
 			temp = temp.next;
@@ -280,6 +279,13 @@ public class LinkedListDemo {
 			
 		}
 		
+		 slow = head;
+		while(slow != fast) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+		
+		
 		return false;
 	}
 	class NewNode {
@@ -320,5 +326,56 @@ public class LinkedListDemo {
 		
 		return res;
 	}
+	
+	public Node reverseKNodes(int k) {
+		Node h =  reverseKGroups(head,  k);
+		
+		this.head = h;
+		return h;
+	}
+	
+	public Node reverseKGroups(Node head, int k) {
+		
+		int count = 0;
+		Node temp = head;
+		
+		while(count < k && temp != null) {
+			temp = temp.next;
+			count++;
+		}
+		
+		
+		
+		if(count == k) {
+			Node revHead = reverseLL(head, k);
+			
+			head.next = reverseKGroups(temp, k);
+			
+			return revHead;
+		}
+		
+		
+		return head;
+	}
+
+	private Node reverseLL(Node head, int k) {
+		
+		Node revHead = null;
+		Node temp = head;
+		
+		while(k > 0) {
+			
+			Node next = temp.next;
+			temp.next = revHead;
+			revHead = temp;
+			temp = next;
+			
+			k--;
+		}
+		
+		return revHead;
+
+	}
+	
 
 }
