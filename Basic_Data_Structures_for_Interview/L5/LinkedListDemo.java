@@ -243,7 +243,6 @@ public class LinkedListDemo {
 		Node slow = head;
 		Node fast = head;
 
-		
 		while (fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
@@ -272,10 +271,159 @@ public class LinkedListDemo {
 			temp = first.next;
 			first.next = second;
 			first = temp;
-			
+
 			temp = second.next;
 			second.next = first;
 			second = temp;
 		}
+	}
+
+	class NewNode {
+		int data;
+		NewNode right;
+		NewNode down;
+	}
+
+	// n - total no of nodes in the LinkedList
+	// TC - O(n)
+	// SC - O(n)
+	public NewNode flatten(NewNode head) {
+
+		if (head == null || head.right == null) {
+			return head;
+
+		}
+
+		head.right = flatten(head.right);
+
+		return merge(head, head.right);
+
+	}
+
+	private NewNode merge(NewNode a, NewNode b) {
+
+		if (a == null)
+			return b;
+		if (b == null)
+			return a;
+
+		NewNode res;
+
+		if (a.data < b.data) {
+
+			res = a;
+			res.down = merge(a.down, b);
+		} else {
+
+			res = b;
+			res.down = merge(a, b.down);
+		}
+
+		return res;
+	}
+
+	public boolean isPalindrome() {
+		return isPalindrome(head);
+	}
+
+	// TC - O(n)
+	// SC - O(1)
+	public boolean isPalindrome(Node head) {
+
+		if (head == null)
+			return true;
+
+		Node fast = head;
+		Node slow = head;
+
+		while (fast.next != null && fast.next.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+
+		Node prev = null;
+		Node curr = slow.next;
+		Node next = null;
+
+		while (curr != null) {
+
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+
+		Node p1 = head;
+		Node p2 = slow;
+
+		boolean res = true;
+		while (res && p2 != null) {
+			if (p1.data != p2.data)
+				res = false;
+			p1 = p1.next;
+			p2 = p2.next;
+		}
+
+		return res;
+	}
+
+	class NNode {
+		int data;
+		NNode random;
+		NNode next;
+
+		NNode(int data) {
+			this.data = data;
+		}
+	}
+
+	//TC - O(n)
+	//SC - O(1)
+	public NNode copyRandom(NNode head) {
+
+		if (head == null) {
+			return null;
+		}
+
+		NNode temp = head;
+		while (temp != null) {
+
+			// Cloned node
+			NNode n = new NNode(temp.data);
+
+			// temp = 8
+			// n = 8' -> 10
+			// 8 -> 10 -> 12
+			n.next = temp.next;
+			temp.next = n;
+			temp = n.next;
+		}
+
+		temp = head;
+
+		while (temp != null) {
+
+			//temp.next -> address of cloned node. 
+			temp.next.random = (temp.random != null) ? temp.random.next : null;
+			temp = temp.next.next;
+		}
+		
+		//8 -> 8' -> 9 -> 9'
+		NNode old = head;
+		NNode newL = head.next;
+		
+		NNode headNew = head.next;
+		
+		while(old != null) {
+			
+			old.next = old.next.next;
+			newL.next = (newL.next != null) ? newL.next.next: null;
+			old = old.next;
+			newL = newL.next;
+			
+		}
+		
+		return headNew;
+ 
 	}
 }

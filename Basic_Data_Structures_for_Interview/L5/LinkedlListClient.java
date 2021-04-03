@@ -14,12 +14,13 @@ public class LinkedlListClient {
 		ll.display();
 		ll.addAt(30, 2);
 		ll.display();
-		ll.addFirst(70);
+		ll.addFirst(0);
 		ll.display();
 		ll.removeLast();
 		ll.display();
 		ll.reverse();
 		ll.display();
+		System.out.println(ll.isPalindrome());
 
 	}
 
