@@ -377,8 +377,8 @@ public class LinkedListDemo {
 		}
 	}
 
-	//TC - O(n)
-	//SC - O(1)
+	// TC - O(n)
+	// SC - O(1)
 	public NNode copyRandom(NNode head) {
 
 		if (head == null) {
@@ -403,27 +403,77 @@ public class LinkedListDemo {
 
 		while (temp != null) {
 
-			//temp.next -> address of cloned node. 
+			// temp.next -> address of cloned node.
 			temp.next.random = (temp.random != null) ? temp.random.next : null;
 			temp = temp.next.next;
 		}
-		
-		//8 -> 8' -> 9 -> 9'
+
+		// 8 -> 8' -> 9 -> 9'
 		NNode old = head;
 		NNode newL = head.next;
-		
+
 		NNode headNew = head.next;
-		
-		while(old != null) {
-			
+
+		while (old != null) {
+
 			old.next = old.next.next;
-			newL.next = (newL.next != null) ? newL.next.next: null;
+			newL.next = (newL.next != null) ? newL.next.next : null;
 			old = old.next;
 			newL = newL.next;
-			
+
 		}
-		
+
 		return headNew;
- 
+
 	}
+
+	public void reverseKGroups(int k) {
+
+		Node h = reverseKGroups(head, k);
+
+		this.head = h;
+
+	}
+
+	private Node reverseKGroups(Node head, int k) {
+
+		int count = 0;
+		Node temp = head;
+
+		while (count < k && temp != null) {
+			temp = temp.next;
+			count++;
+		}
+
+		if (count == k) {
+
+			Node revHead = reverseLL(head, k);
+
+			head.next = reverseKGroups(temp, k);
+
+			return revHead;
+		}
+
+		return head;
+	}
+
+	private Node reverseLL(Node head, int k) {
+
+		Node revHead = null;
+		Node temp = head;
+
+		while (k > 0) {
+			Node next = temp.next;
+			temp.next = revHead;
+			revHead = temp;
+			temp = next;
+
+			k--;
+		}
+
+		return revHead;
+
+	}
+	
+	
 }
