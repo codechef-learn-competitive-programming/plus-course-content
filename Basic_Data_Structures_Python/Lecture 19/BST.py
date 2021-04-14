@@ -17,6 +17,38 @@ def insert(root, data):
 
 	return root
 
+
+def remove(root, key):
+	if root == None:
+		return root
+
+	# search for the key
+	if key < root.data:
+		root.left = remove(root.left, key)
+		return root
+	elif key > root.data:
+		root.right = remove(root.right, key)
+		return root
+	else:
+		if key == root.data:
+			if root.left == None and root.right == None:
+				return None
+			elif root.left != None and root.right == None:
+				temp = root.left
+				root.left = None
+				return temp
+			elif root.left == None and root.right != None:
+				temp = root.right
+				root.right = None
+				return temp
+			else:
+				nextbig = root.right
+				while nextbig.left != None:
+					nextbig = nextbig.left
+				root.data = nextbig.data
+				root.right = remove(root.right, nextbig.data)
+				return root
+
 def preorder(root):
 	if(root == None):
 		return
@@ -59,16 +91,23 @@ preorder(root)
 print()
 inorder(root)
 print()
+remove(root, 5)
+preorder(root)
+print()
+inorder(root)
+print()
 """
-10
+11
 5
 1
 8
 20
 30
 15
+31
 6
-9
 7
+10
+9
 -1
 """
