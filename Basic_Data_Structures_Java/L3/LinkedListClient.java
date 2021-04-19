@@ -12,7 +12,9 @@ public class LinkedListClient {
 		ll.addLast(30);
 		ll.addLast(40);
 		ll.addLast(50);
-		ll.addLast(60);
+		ll.display();
+		ll.reverseKNodes(2);
+		
 		//ll.display();
 		
 //		ll.addFirst(0);
@@ -29,12 +31,12 @@ public class LinkedListClient {
 //		
 //		ll.removeAt(3);
 //		ll.display();
-
-		ll.display();
+//
+//		ll.display();
 //		ll.reverse();
 //		ll.display();
-		System.out.println(ll.findMid());
-		ll.reorderList();
+//		System.out.println(ll.findMid());
+//		ll.reorderList();
 		ll.display();
 		
 	}
