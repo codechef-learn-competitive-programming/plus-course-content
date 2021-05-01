@@ -42,7 +42,7 @@ int main(){
 	// cout << "a = " << a << endl;
 	// cout << "b = " << b << endl;
 
-	// swap(&a, &b);
+	
 
 	// cout << "After Swap" << endl;
 	// cout << "a = " << a << endl;
@@ -63,6 +63,7 @@ int main(){
 	delete pInt;
 	delete pfloat;
 
+	// swap(&a, &b);
 	return 0;
 }
 
