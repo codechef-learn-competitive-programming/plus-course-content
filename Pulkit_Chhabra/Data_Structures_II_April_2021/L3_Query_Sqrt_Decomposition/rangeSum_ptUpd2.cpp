@@ -61,7 +61,7 @@ int32_t main()
 		pre[i] = pre[i - 1] + arr[i];
 	} //initial array and prefix sum is updated;
 
-	int b = sqrt(q) + 1, cur_b = 0;
+	int b = sqrt(q), cur_b = 0;
 
 	// After answering each query
 	// Check if current query if the last query of this block
